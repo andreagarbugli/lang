@@ -1,0 +1,33 @@
+i8 i16 i32 i64
+u8 u16 u32 u64
+       f32 f64
+char
+array
+string // utf-8 ?
+
+Vec2 :: struct {
+    x: f32,
+    y: f32,
+}
+
+#packed
+Vec3 :: struct {
+    Vec2
+    z: f32,
+}
+
+#inline 
+Vec3_add :: (Vec3 &a, Vec3 &a) -> Vec3 {
+    return Vec3 {
+        x: a.x + b.x,
+        y: a.y + b.y,
+        z: a.z + b.z,
+    };
+}
+
+main :: () {
+    let v = Vec3_new();
+
+    const a = 10;
+    const b = a as f64;
+}
